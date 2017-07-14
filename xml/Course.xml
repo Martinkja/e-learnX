@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<courselist xmlns="localhost://50989/api/Course">
+
+  <course category="Media Engineering">
+    <title lang="de">Einführung in die Software Architektur</title>
+    <instructor>Giada De Laurentiis</instructor>
+    <date>04.07.2017</date>
+  </course>
+  
+   <course category="Audiovisuelle Medien">
+    <title lang="en">Usability and User Experience Research</title>
+    <instructor>Lisa Müller</instructor>
+	<instructor>Peter Maier</instructor>
+	<instructor>Bob Stein</instructor>
+    <date>30.05.2016</date>
+   </course>
+  
+    <course category="Computer Science and media">
+    <title lang="en">Requirement Analysis</title>
+    <instructor>Hans Gauda</instructor>
+    <date>12.10.2017</date>
+  </course>
+  
+    <course category="Media Engineering">
+    <title lang="de">Programmieren in C++</title>
+    <instructor>Wilhelm Roettger</instructor>
+    <date>01.06.2017</date>
+  </course>
+</courselist> 

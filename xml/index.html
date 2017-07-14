@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<title>Test</title>
+</head>
+<body>
+
+<ul class="uos-header-nav uos-header-nav-secondary">
+	<li><a rel="nofollow" href="javascript:(function(){d=document;lf=d.createElement('script');lf.type='text/javascript';lf.id='ToolbarStarter';lf.text='var%20StudyBarNoSandbox=true';d.getElementsByTagName('head')[0].appendChild(lf);jf=d.createElement('script');jf.src='https://access.ecs.soton.ac.uk/ToolBar/channels/toolbar-stable/JTToolbar.user.js';jf.type='text/javascript';jf.id='ToolBar';d.getElementsByTagName('head')[0].appendChild(jf);})();" target="_top" title="">AccToolBar</a>
+    </li>
+</ul>
+
+<p><button onclick="loadXMLDoc()">Get CD info</button></p>
+
+<table id="demo" border="1">
+<tr><th>Titel</th><th>Instructor</th></tr>
+</table>
+
+<script>
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "Course.xml" , true);
+  xmlhttp.send();
+}
+
+function myFunction(xml) {
+  var x, i, xmlDoc, table;
+  xmlDoc = xml.responseXML;
+  table = "<tr><th>Artist</th><th>Title</th></tr>";
+  x = xmlDoc.getElementsByTagName("course")
+  for (i = 0; i < x.length; i++) { 
+    table += "<tr><td>" + 
+    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
